@@ -1,0 +1,10 @@
+.contacts {
+    &__row {
+        --bs-gutter-y: 1.5rem
+    }
+    &__map {
+        text-align: center;
+        width: 100%;
+        display: block;
+    }
+}

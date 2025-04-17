@@ -1,0 +1,32 @@
+doctype html
+block html
+  html(lang=lang)
+    head
+      block head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        meta(name="theme-color" content=themeColor)
+        title= pageTitle
+        link(rel="icon", href="img/favicon.ico", type="image/x-icon")
+        link(rel="stylesheet", href="css/style.min.css")
+        meta(name="description", content="Czyszczenie tapicerki meblowej, samochodowej i dywanów we Wrocławiu i okolicach. Dojazd do klienta, ekologiczne środki i szybkie terminy. CleanArt – skutecznie i bezpiecznie.")
+        meta(name="keywords", content="czyszczenie tapicerki Wrocław, pranie kanapy Wrocław, czyszczenie tapicerki samochodowej Wrocław, czyszczenie materacy Wrocław, pranie narożników Wrocław, czyszczenie wykładzin Wrocław, czyszczenie sof Wrocław, czyszczenie dywanów Wrocław, mobilne pranie tapicerki Wrocław, ekologiczne pranie tapicerki, CleanArt Wrocław")
+        meta(name="robots", content="index, follow")
+        meta(property="og:title", content="CleanArt – Profesjonalne czyszczenie tapicerki i dywanów | Wrocław i okolice")
+        meta(property="og:description", content="Tapicerka, dywany i auta czyste jak nowe! Ekologiczne środki, szybki dojazd i pełen profesjonalizm. CleanArt – usługi czyszczenia, którym możesz zaufać.")
+        meta(property="og:type", content="website")
+        meta(property="og:url", content="https://cleanart-wroclaw.pl/")
+        meta(property="og:image", content="https://cleanart-wroclaw.pl/logo-big.png")
+        meta(name="twitter:card", content="summary_large_image")
+        meta(name="twitter:title", content="CleanArt – Czyszczenie tapicerki meblowej i samochodowej | Wrocław")
+        meta(name="twitter:description", content="Nowoczesne i bezpieczne czyszczenie: tapicerka meblowa, samochodowa i dywany. Wrocław i okolice. Dojazd do klienta.")
+        meta(name="twitter:image", content="https://cleanart-wroclaw.pl/logo-big.png")
+        block fonts
+    body
+      block content
+      block scripts
+        script(src="js/gsap.min.js")
+        script(src="js/ScrollTrigger.min.js")
+        script(src="js/beer-slider.js")
+        script(src="js/main.js")

@@ -1,0 +1,80 @@
+.process {
+    &__row {
+        --bs-gutter-y: 1.5rem;
+    }
+    &__title {
+        margin-bottom: 0.5rem;
+    }
+    &__subtitle {
+        margin-bottom: var(--h2);
+    }
+
+
+    @media screen and (min-width: 1200px) {
+        #process-slider {
+            margin-top: 50px;
+        }
+    }
+
+
+}
+
+.stages {
+    counter-reset: section;
+}
+.stage {
+    position: relative;
+    counter-increment: section;
+    font-weight: 700;
+    display: flex;
+    gap: 1rem;
+    &:before {
+        content: counter(section);
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: all 400ms;
+        flex-shrink: 0;
+        background: $primary;
+        border: 5px solid $dark ;
+    }
+    &:hover:before {
+        background: $dark;
+        border: 5px solid $dark ;
+        color: $primary;
+    }
+
+    @media screen and (min-width: 992px) {
+        flex-direction: column;
+    }
+
+
+    @media screen and (min-width: 1200px) {
+        margin-top: auto;
+&:nth-child(1) {
+    text-align: right;
+    align-items: flex-end;
+    margin-bottom: -150px;
+    
+}
+&:nth-child(2) {
+    text-align: right;
+    align-items: flex-end;
+    margin-bottom: -25px;
+}
+&:nth-child(3) {
+    text-align: center;
+    align-items: center;
+}
+&:nth-child(4) {
+    margin-bottom: -25px;
+    
+}
+&:nth-child(5) {
+    margin-bottom: -150px;
+}
+    }
+}

@@ -1,0 +1,45 @@
+.about {
+    &__title {
+        position: relative;
+        &:before {
+            content: "";
+            display: block;
+            width: 280px;
+            height: 280px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            // background: #fff;
+            // background: radial-gradient(circle, #393939 0%, #fff 70%);
+            z-index: -1;
+        }
+    }
+    &__info {
+        line-height: 1.5;
+        text-align: center;
+    }
+    &__btn {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+    &__img {
+        position: relative;
+        z-index: 1;
+    }
+
+    @media screen and (min-width: 992px) {
+        &__info {
+            text-align: left;
+        }
+        &__title {
+            &:before {
+                width: 500px;
+                height: 500px;
+            }
+        }
+    }
+}

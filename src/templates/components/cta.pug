@@ -1,0 +1,38 @@
+section.cta#cta.block 
+    .container 
+        .row.justify-content-center
+            .col-12.col-md-6 
+                h2.cta__title.text-center.text-uppercase Złożyć zapytanie
+                form.cta__form#cta-form(method="POST")
+                    .row.cta__row 
+                        .col-6 
+                            input.input.cta__input(type="text", placeholder="Imię", name="name", required)
+                        .col-6 
+                            input.input.cta__input(type="tel", placeholder="Telefon", name="phone", required)
+                        .col-6 
+                            input.input.cta__input(type="text", placeholder="Miasto (jeśli usługa jest na miejscu)", name="city")
+                        .col-6 
+                            input.input.cta__input(type="text", placeholder="Data", name="date")
+                        .col-12 
+                            .cta__labels
+                                label.cta__label.label
+                                    input(type="radio", name="work", value="Pranie tapicerki meblowej")
+                                    | Pranie tapicerki meblowej
+                                label.cta__label.label
+                                    input(type="radio", name="work", value="Czyszczenie dywanów i wykładzin")
+                                    | Czyszczenie dywanów i wykładzin
+                                label.cta__label.label
+                                    input(type="radio", name="work", value="Mycie okien")
+                                    | Mycie okien
+                                label.cta__label.label
+                                    input(type="radio", name="work", value="Sprzątanie")
+                                    | Sprzątanie
+                                label.cta__label.label
+                                    input(type="radio", name="work", value="Pranie tapicerki samochodowej")
+                                    | Pranie tapicerki samochodowej
+                                label.cta__label.label
+                                    input(type="radio", name="work", value="Inny")
+                                    | Inny
+                        .col-12 
+                            button.btn.cta__btn.btn-primary(type="submit") Zarejestrować się 
+                
