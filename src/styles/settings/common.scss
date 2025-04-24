@@ -158,12 +158,18 @@ br {
     background: $primary;
     border: 1px solid $dark;
     color: $dark;
+    &:hover {
+      background: darken($color: $primary, $amount: 15%);
+    }
 
   }
   &-secondary {
     background: $secondary;
     border: 1px solid $dark;
     color: $dark;
+    &:hover {
+      background: darken($color: $secondary, $amount: 15%);
+    }
     
   }
   &-dark {
@@ -287,3 +293,9 @@ br {
 //     text-shadow: 0 0 25px $secondary;
 //   }
 // }
+
+.badge {
+  border: 1px solid $secondary;
+  padding: 0.5rem;
+  display: inline-block;
+}

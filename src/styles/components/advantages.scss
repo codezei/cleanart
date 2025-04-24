@@ -38,7 +38,7 @@
     padding-right:1rem;
     padding-bottom: 1rem;
     position: relative;
-    text-align: right;
+    text-align: center;
     // background: linear-gradient(to left, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 80%, rgba(255, 255, 255, 0) 100%);
     &:not(:last-child) {
         margin-bottom: 1rem
@@ -112,6 +112,11 @@
         font-size: 0.8em;
         margin-top: 0.5rem;
         text-transform: lowercase;
+    }
+
+
+    @media screen and (min-width: 992px) {
+        text-align: right;
     }
 
 }
