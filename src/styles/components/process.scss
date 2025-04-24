@@ -38,13 +38,13 @@
         border-radius: 50%;
         transition: all 400ms;
         flex-shrink: 0;
-        background: $primary;
+        background: $secondary;
         border: 5px solid $dark ;
     }
     &:hover:before {
         background: $dark;
         border: 5px solid $dark ;
-        color: $primary;
+        color: $secondary;
     }
 
     @media screen and (min-width: 992px) {

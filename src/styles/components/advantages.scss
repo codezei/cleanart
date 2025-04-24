@@ -1,6 +1,6 @@
 .advantages {
     position: relative;
-    
+    margin-right: 1rem;
     // margin-left: 1rem;
     // background: url(../img/sofa.png);
     // background-position: 50% right center;
@@ -39,6 +39,7 @@
     padding-bottom: 1rem;
     position: relative;
     text-align: right;
+    // background: linear-gradient(to left, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 80%, rgba(255, 255, 255, 0) 100%);
     &:not(:last-child) {
         margin-bottom: 1rem
     }
@@ -61,7 +62,7 @@
         width: 2rem;
         height: 2rem;
         padding: 0.125rem;
-        background: linear-gradient(#fff, #fff) padding-box, $bg-green border-box;
+        background: linear-gradient(rgba($color: $secondary, $alpha: 1), rgba($color: $secondary, $alpha: 1)) padding-box, $bg-green border-box;
         border: 1px solid transparent;
         position: absolute;
         right: -1rem;
