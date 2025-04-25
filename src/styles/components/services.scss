@@ -91,7 +91,7 @@
         padding: 1rem;
         border-top: 1px solid $dark;
         border-bottom: 1px solid $dark;
-        background: $primary;
+        background: $bg-lightgreen;
         color: $dark;
         text-align: center;
         font-size: 1rem;
@@ -158,5 +158,11 @@
         &__back {
             padding: 2rem;
         }
+    }
+}
+
+.services-swiper {
+    .swiper-slide {
+        height: auto;
     }
 }

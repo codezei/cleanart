@@ -1,3 +1,5 @@
+// import Swiper from "swiper";
+
 export default function () {
     const services = document.querySelector('.services')
     const servicesTitle = document.querySelector('.services__title')
@@ -16,13 +18,34 @@ export default function () {
         duration: 0.6,
         ease: "power2.out"
     })
-    .from(servicesItems, {
-        opacity: 0,
-        y:"-50%",
-        duration: 0.6,
-        stagger: 0.2,
-        ease: "power2.out"
-    }, "-=0.3");
+
+    let servicesSwiper = new Swiper(".services-swiper", {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        // freeMode: true,
+        navigation: {
+            nextEl: ".services-button-next",
+            prevEl: ".services-button-prev",
+        },
+        pagination: {
+            el: ".services-pagination",
+            clickable: true
+        },
+        breakpoints: {
+            576: {
+                slidesPerView: 2,
+            },
+            768: {
+                slidesPerView: 3,
+            },
+            992: {
+                slidesPerView: 4,
+            },
+            1200: {
+                slidesPerView: 5,
+            },
+        }
+    })
 
     
 }

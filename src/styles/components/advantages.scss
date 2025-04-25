@@ -24,7 +24,7 @@
         display: block;
         width: 1px;
         height: 100%;
-        background: $bg-green;
+        background: $primary;
         position: absolute;
         right: 0;
         bottom: 0;
@@ -48,7 +48,7 @@
         display: block;
         height: 1px;
         width: 100%;
-        background: $bg-green;
+        background: $primary;
         position: absolute;
         right: 0;
         bottom: 0;
@@ -62,7 +62,7 @@
         width: 2rem;
         height: 2rem;
         padding: 0.125rem;
-        background: linear-gradient(rgba($color: $secondary, $alpha: 1), rgba($color: $secondary, $alpha: 1)) padding-box, $bg-green border-box;
+        background: $bg-lightgreen;
         border: 1px solid transparent;
         position: absolute;
         right: -1rem;

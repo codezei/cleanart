@@ -1,29 +1,4 @@
 export default function () {
-    // let items = gsap.utils.toArray(".js-scroll-x-section")
-    // let pageWrapper = document.querySelector('.js-scroll-x-wrapper')
-
-    // items.forEach((container, i) => {
-    // let localItems = container.querySelectorAll(".js-scroll-x-item"),
-    //     distance = () => {
-    //         let lastItemBounds = localItems[localItems.length-1].getBoundingClientRect(),
-    //             containerBounds = container.getBoundingClientRect();
-    //         return Math.max(0, lastItemBounds.right - containerBounds.right);
-    //     };
-    //     gsap.to(container, {
-    //         x: () => -distance(),
-    //         ease: "none",
-    //         scrollTrigger: {
-    //         trigger: pageWrapper,
-    //         start: "top top",
-    //         pinnedContainer: pageWrapper,
-    //         end: () => "+=" + distance(),
-    //         pin: pageWrapper,
-    //         scrub: true,
-    //         invalidateOnRefresh: true 
-    //         }
-    //     })
-    // });
-
     let wrappers = gsap.utils.toArray(".js-scroll-x-wrapper")
 
     wrappers.forEach((wrapper, i) => {
@@ -48,4 +23,10 @@ export default function () {
             }
         })
     });
+
+    
 }
+// .section.js-scroll-x-wrapper 
+    // .js-scroll-x-section
+    //     .row.flex-nowrap.services__row.row-cols-1.row-cols-sm-2.row-cols-md-3.row-cols-lg-4.row-cols-xl-5
+    //         .col.js-scroll-x-item

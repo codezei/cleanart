@@ -21,6 +21,12 @@
 
 .stages {
     counter-reset: section;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    @media screen and (min-width: 992px) {
+        flex-direction: row;
+    }
 }
 .stage {
     position: relative;
@@ -38,17 +44,18 @@
         border-radius: 50%;
         transition: all 400ms;
         flex-shrink: 0;
-        background: $secondary;
-        border: 5px solid $dark ;
+        background: $bg-lightgreen;
+        border: 5px solid $secondary ;
     }
-    &:hover:before {
-        background: $dark;
-        border: 5px solid $dark ;
-        color: $secondary;
-    }
+    // &:hover:before {
+    //     background: $dark;
+    //     border: 5px solid $dark ;
+    //     color: $primary;
+    // }
 
     @media screen and (min-width: 992px) {
         flex-direction: column;
+        width: 25%;
     }
 
 

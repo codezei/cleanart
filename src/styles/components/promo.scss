@@ -1,30 +1,45 @@
 .promo {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7)90%, rgba(255, 255, 255, 1) 100%),  url(../img/promo-bg-mob.webp);
-    background-size: cover;
-    
-    // color: #fff;
+    padding-top: 90px;
+
     &__bg {
-        // display: block;
-        // width: 100%;
-        // padding-bottom: 100%;
-        // position: absolute;
-        // top: -50%;
-        // left: -50%;
-        // background: url(../img/logo.png);
-        // background-repeat: no-repeat;
-        // background-position: center;
-        // background-size: contain;
-        // opacity: 0.2;
-        // z-index: -1;
-        // filter: blur(40px);
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url(../img/bg-3.jpg);
+        background-position: left bottom;
+        background-size: 800px;
+        background-repeat: no-repeat;
+        opacity:  1;
+        z-index: -1;
+        // filter: blur(4px);
         // border-radius: 50%;
-        // pointer-events: none;
+        pointer-events: none;
+    }
+    &__grid {
+        position: relative;
+        padding: 1.5rem 0;
+        &:before {
+            content: "";
+            display: block;
+            width: 100vw;
+            height: 100%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background: #ffffffe1;
+            transform: translate(-50%, -50%);
+            filter: blur(30px);
+        }
     }
     &__title {
         text-transform: uppercase;
         text-align: center;
+        
     }
     &__subtitle {
         margin-bottom: 2rem;
@@ -73,12 +88,12 @@
         }
     }
 
-    @media screen and (min-width: 576px) {
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7)90%, rgba(255, 255, 255, 1) 100%),  url(../img/promo-bg.webp);
-        background-size: cover;
+    // @media screen and (min-width: 576px) {
+    //     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7)90%, rgba(255, 255, 255, 1) 100%),  url(../img/promo-bg.webp);
+    //     background-size: cover;
 
 
-    }
+    // }
 
     @media screen and (min-width: 992px) {
         &__grid {
@@ -87,10 +102,12 @@
             align-items: center;
             gap: 0 1rem;
             grid-template-areas: 
+            ". . . . . . A A A A A A"
             "T T T T T T A A A A A A"
             "S S S S S S A A A A A A"
             "B B B B B B A A A A A A"
             "C C C C C C A A A A A A"
+            ". . . . . . A A A A A A"
             ;
         }
         &__title {
@@ -112,6 +129,7 @@
         }
         &__advantages {
             grid-area: A;
+            margin-bottom: 0;
         }
     }
 

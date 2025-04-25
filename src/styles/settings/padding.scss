@@ -1,6 +1,8 @@
 .block {
   padding-top: 25px;
   padding-bottom: 25px;
+  position: relative;
+  z-index: 1;
 
   @include rm(576) {
     padding-top: 30px;

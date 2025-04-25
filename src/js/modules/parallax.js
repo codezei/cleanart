@@ -6,7 +6,7 @@ export default function () {
           ease: "none",
           scrollTrigger: {
             trigger: item,
-            start: "top bottom", // Начинает анимацию, когда элемент появляется
+            start: "left bottom", // Начинает анимацию, когда элемент появляется
             scrub: true, // Плавный эффект
           },
         });

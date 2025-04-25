@@ -1,6 +1,6 @@
 .reviews {
     overflow: hidden;
-    background-image: url(../img/reviews-bg-mob.webp);
+    background: linear-gradient(to bottom, #fff 0%, transparent 10%, transparent 90%, #fff 100% ), url(../img/reviews-bg-mob.webp);
     background-size: cover;
     background-position: center;
     
@@ -17,7 +17,7 @@
     }
 
     @media screen and (min-width: 576px) {
-        background-image: url(../img/reviews-bg.webp);
+        background: linear-gradient(to bottom, #fff 0%, transparent 10%, transparent 90%, #fff 100% ), url(../img/reviews-bg.webp);
     }
 }
 
@@ -98,5 +98,11 @@
         -webkit-text-fill-color: #222;
         max-height: calc(4em * var(--line-height));
         overflow-y: auto;
+    }
+}
+
+.reviews-swiper {
+    .swiper-slide {
+        height: auto;
     }
 }

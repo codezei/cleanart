@@ -1,14 +1,19 @@
 .header {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 10;
+    background: rgba($color: #fff, $alpha: 0.7);
+    backdrop-filter: blur(10px);
+    // background: #ffffffcf;
+    // border-top: 1px solid #000;
+    // border-bottom: 1px solid #000;
     &__inner {
         // border: 1px solid #fff;
         padding: 0.25rem 1rem;
-        backdrop-filter: blur(5px);
-background-color: rgba($color: $light, $alpha: 0.4);
+//         backdrop-filter: blur(5px);
+// background-color: rgba($color: $light, $alpha: 0.4);
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -18,8 +23,8 @@ background-color: rgba($color: $light, $alpha: 0.4);
         text-align: right;
         font-size: 14px;
         padding: 0.25rem 1rem;
-        backdrop-filter: blur(5px);
-        background-color: rgba($color: $light, $alpha: 0.4);
+        // backdrop-filter: blur(5px);
+        // background-color: rgba($color: $light, $alpha: 0.4);
         // border: 1px solid #fff;
     }
 

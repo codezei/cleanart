@@ -1,7 +1,7 @@
 export default function () {
     const reviews = document.querySelector('.reviews')
     const reviewsTitle = document.querySelector('.reviews__title')
-    const reviewsItems = document.querySelectorAll('.review')
+    // const reviewsItems = document.querySelectorAll('.review')
 
     const reviewsTimeline = gsap.timeline({
 		scrollTrigger: {
@@ -16,13 +16,41 @@ export default function () {
         duration: 0.6,
         ease: "power2.out"
     })
-    .from(reviewsItems, {
-        opacity: 0,
-        y:"-50%",
-        duration: 0.6,
-        stagger: 0.2,
-        ease: "power2.out"
-    }, "-=0.3");
+    // .from(reviewsItems, {
+    //     opacity: 0,
+    //     y:"-50%",
+    //     duration: 0.6,
+    //     stagger: 0.2,
+    //     ease: "power2.out"
+    // }, "-=0.3");
+
+    let servicesSwiper = new Swiper(".reviews-swiper", {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        // freeMode: true,
+        navigation: {
+            nextEl: ".reviews-button-next",
+            prevEl: ".reviews-button-prev",
+        },
+        pagination: {
+            el: ".reviews-pagination",
+            clickable: true
+        },
+        breakpoints: {
+            576: {
+                slidesPerView: 2,
+            },
+            768: {
+                slidesPerView: 3,
+            },
+            992: {
+                slidesPerView: 4,
+            },
+            1200: {
+                slidesPerView: 5,
+            },
+        }
+    })
 
     
 }

@@ -80,7 +80,7 @@
 	      ease: "none",
 	      scrollTrigger: {
 	        trigger: item,
-	        start: "top bottom",
+	        start: "left bottom",
 	        // Начинает анимацию, когда элемент появляется
 	        scrub: true // Плавный эффект
 
@@ -453,61 +453,6 @@
 	  }
 	}
 
-	function xScroll () {
-	  // let items = gsap.utils.toArray(".js-scroll-x-section")
-	  // let pageWrapper = document.querySelector('.js-scroll-x-wrapper')
-	  // items.forEach((container, i) => {
-	  // let localItems = container.querySelectorAll(".js-scroll-x-item"),
-	  //     distance = () => {
-	  //         let lastItemBounds = localItems[localItems.length-1].getBoundingClientRect(),
-	  //             containerBounds = container.getBoundingClientRect();
-	  //         return Math.max(0, lastItemBounds.right - containerBounds.right);
-	  //     };
-	  //     gsap.to(container, {
-	  //         x: () => -distance(),
-	  //         ease: "none",
-	  //         scrollTrigger: {
-	  //         trigger: pageWrapper,
-	  //         start: "top top",
-	  //         pinnedContainer: pageWrapper,
-	  //         end: () => "+=" + distance(),
-	  //         pin: pageWrapper,
-	  //         scrub: true,
-	  //         invalidateOnRefresh: true 
-	  //         }
-	  //     })
-	  // });
-	  var wrappers = gsap.utils.toArray(".js-scroll-x-wrapper");
-	  wrappers.forEach(function (wrapper, i) {
-	    var section = wrapper.querySelector('.js-scroll-x-section');
-	    var localItems = wrapper.querySelectorAll(".js-scroll-x-item");
-
-	    var distance = function distance() {
-	      var lastItemBounds = localItems[localItems.length - 1].getBoundingClientRect(),
-	          containerBounds = section.getBoundingClientRect();
-	      return Math.max(0, lastItemBounds.right - containerBounds.right);
-	    };
-
-	    gsap.to(section, {
-	      x: function x() {
-	        return -distance();
-	      },
-	      ease: "none",
-	      scrollTrigger: {
-	        trigger: wrapper,
-	        start: "top top",
-	        pinnedContainer: wrapper,
-	        end: function end() {
-	          return "+=" + distance();
-	        },
-	        pin: wrapper,
-	        scrub: true,
-	        invalidateOnRefresh: true
-	      }
-	    });
-	  });
-	}
-
 	function header() {
 	  var header = document.querySelector('.header');
 	  var burger = document.querySelector('.js-burger');
@@ -556,6 +501,7 @@
 	  }
 	}
 
+	// import Swiper from "swiper";
 	function services () {
 	  var services = document.querySelector('.services');
 	  var servicesTitle = document.querySelector('.services__title');
@@ -571,19 +517,40 @@
 	    y: "-100%",
 	    duration: 0.6,
 	    ease: "power2.out"
-	  }).from(servicesItems, {
-	    opacity: 0,
-	    y: "-50%",
-	    duration: 0.6,
-	    stagger: 0.2,
-	    ease: "power2.out"
-	  }, "-=0.3");
+	  });
+	  var servicesSwiper = new Swiper(".services-swiper", {
+	    slidesPerView: 1,
+	    spaceBetween: 0,
+	    // freeMode: true,
+	    navigation: {
+	      nextEl: ".services-button-next",
+	      prevEl: ".services-button-prev"
+	    },
+	    pagination: {
+	      el: ".services-pagination",
+	      clickable: true
+	    },
+	    breakpoints: {
+	      576: {
+	        slidesPerView: 2
+	      },
+	      768: {
+	        slidesPerView: 3
+	      },
+	      992: {
+	        slidesPerView: 4
+	      },
+	      1200: {
+	        slidesPerView: 5
+	      }
+	    }
+	  });
 	}
 
 	function reviews () {
 	  var reviews = document.querySelector('.reviews');
-	  var reviewsTitle = document.querySelector('.reviews__title');
-	  var reviewsItems = document.querySelectorAll('.review');
+	  var reviewsTitle = document.querySelector('.reviews__title'); // const reviewsItems = document.querySelectorAll('.review')
+
 	  var reviewsTimeline = gsap.timeline({
 	    scrollTrigger: {
 	      trigger: reviews,
@@ -595,13 +562,41 @@
 	    y: "-100%",
 	    duration: 0.6,
 	    ease: "power2.out"
-	  }).from(reviewsItems, {
-	    opacity: 0,
-	    y: "-50%",
-	    duration: 0.6,
-	    stagger: 0.2,
-	    ease: "power2.out"
-	  }, "-=0.3");
+	  }); // .from(reviewsItems, {
+	  //     opacity: 0,
+	  //     y:"-50%",
+	  //     duration: 0.6,
+	  //     stagger: 0.2,
+	  //     ease: "power2.out"
+	  // }, "-=0.3");
+
+	  var servicesSwiper = new Swiper(".reviews-swiper", {
+	    slidesPerView: 1,
+	    spaceBetween: 0,
+	    // freeMode: true,
+	    navigation: {
+	      nextEl: ".reviews-button-next",
+	      prevEl: ".reviews-button-prev"
+	    },
+	    pagination: {
+	      el: ".reviews-pagination",
+	      clickable: true
+	    },
+	    breakpoints: {
+	      576: {
+	        slidesPerView: 2
+	      },
+	      768: {
+	        slidesPerView: 3
+	      },
+	      992: {
+	        slidesPerView: 4
+	      },
+	      1200: {
+	        slidesPerView: 5
+	      }
+	    }
+	  });
 	}
 
 	function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
@@ -1578,17 +1573,47 @@
 	  }
 	});
 
+	function banner () {
+	  function createObserver(blockClasses) {
+	    var banner = document.querySelector('.banner');
+	    if (!banner) return;
+	    var blocks = blockClasses.map(function (cls) {
+	      return document.querySelector(cls);
+	    }).filter(Boolean);
+	    var observer = new IntersectionObserver(function (entries) {
+	      var isVisible = entries.some(function (entry) {
+	        return entry.isIntersecting;
+	      });
+
+	      if (isVisible) {
+	        banner.classList.add('hidden');
+	      } else {
+	        banner.classList.remove('hidden');
+	      }
+	    }, {
+	      threshold: 0.1
+	    });
+	    blocks.forEach(function (block) {
+	      return observer.observe(block);
+	    });
+	  }
+
+	  var blockClasses = ['.footer', '.promo'];
+	  createObserver(blockClasses);
+	}
+
 	document.addEventListener('DOMContentLoaded', function () {
 	  promo();
 	  about();
 	  parallax();
-	  faq();
-	  xScroll();
+	  faq(); // xScroll()
+
 	  header();
 	  services();
 	  reviews();
 	  cta();
 	  process();
+	  banner();
 	});
 	works();
 

@@ -1,4 +1,6 @@
 .price {
+    // background: $bg-lightgreen;
+    // color: #fff;
     &__btn {
         display: flex;
         flex-wrap: wrap;
@@ -8,10 +10,10 @@
     }
     &-table {
         &__title {
-            border-top: 1px solid $dark;
-            border-bottom: 1px solid $dark;
+            border-top: 4px solid $secondary;
+            border-bottom: 4px solid $secondary;
             padding: 0.75rem;
-            background: $secondary;
+            background: $bg-lightgreen;
             color: $dark;
             margin: 0;
         }
@@ -28,9 +30,9 @@
         padding: 0.75rem;
         transition: all 400ms;
         flex-grow: 1;
-        border-bottom: 1px solid $dark;
+        // border-bottom: 1px solid $dark;
         &:hover {
-            background: $secondary;
+            background: $bg-lightgreen;
             color: $dark;
         }
         

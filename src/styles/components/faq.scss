@@ -1,12 +1,13 @@
 .faq {
-
+// background: $bg-lightgreen;
+// color: #fff;
     &__item {
         padding: 1rem;
         cursor: pointer;
-        background: $secondary;
+        background: $bg-lightgreen;
         color: $dark;
-        border-top: 1px solid $dark;
-        border-bottom: 1px solid $dark;
+        border-top: 4px solid $secondary;
+        border-bottom: 4px solid $secondary;
         // color: #fff;
       }
       &__item:not(:last-child) {
