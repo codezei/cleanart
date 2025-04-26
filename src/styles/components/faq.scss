@@ -4,10 +4,12 @@
     &__item {
         padding: 1rem;
         cursor: pointer;
-        background: $bg-lightgreen;
-        color: $dark;
-        border-top: 4px solid $secondary;
-        border-bottom: 4px solid $secondary;
+        // background: $bg-lightgreen;
+        // color: $dark;
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+        background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)) padding-box, $bg-blue border-box;
+        background-clip: padding-box, border-box;
         // color: #fff;
       }
       &__item:not(:last-child) {

@@ -41,9 +41,9 @@ export default function () {
             992: {
                 slidesPerView: 4,
             },
-            1200: {
-                slidesPerView: 5,
-            },
+            // 1200: {
+            //     slidesPerView: 5,
+            // },
         }
     })
 

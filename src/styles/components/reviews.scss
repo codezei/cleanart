@@ -1,8 +1,8 @@
 .reviews {
     overflow: hidden;
-    background: linear-gradient(to bottom, #fff 0%, transparent 10%, transparent 90%, #fff 100% ), url(../img/reviews-bg-mob.webp);
-    background-size: cover;
-    background-position: center;
+    // background: linear-gradient(to bottom, #fff 0%, transparent 10%, transparent 90%, #fff 100% ), url(../img/reviews-bg-mob.webp);
+    // background-size: cover;
+    // background-position: center;
     
     &__title {
         text-align: center;
@@ -16,19 +16,21 @@
         --bs-gutter-x: 0;
     }
 
-    @media screen and (min-width: 576px) {
-        background: linear-gradient(to bottom, #fff 0%, transparent 10%, transparent 90%, #fff 100% ), url(../img/reviews-bg.webp);
-    }
+    // @media screen and (min-width: 576px) {
+    //     background: linear-gradient(to bottom, #fff 0%, transparent 10%, transparent 90%, #fff 100% ), url(../img/reviews-bg.webp);
+    // }
 }
 
 .review {
     --padding: 1rem;
-    background: #fafafa;
+    // background: #fafafa;
     height: 100%;
     position: relative;
     padding: 1rem;
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)) padding-box, $bg-blue border-box;
+    background-clip: padding-box, border-box;
 
     &__header {
         display: flex;

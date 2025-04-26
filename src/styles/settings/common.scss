@@ -131,22 +131,19 @@ br {
 
 .btn {
   border: none;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 2.5rem;
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
   position: relative;
   transition: all 400ms;
   color: #fff;
-
+  border-radius: 0.25rem;
+  
   &-primary {
-    background: $bg-lightgreen;
-    border: 1px solid $dark;
-    color: $dark;
-    &:hover {
-      background: $secondary;
-    }
-
+    background: $bg-blue;
+    color: $light;
+    box-shadow: 1px 1px 5px rgba($color: #000000, $alpha: 0.5), inset 0 0 4px rgba($color: #000000, $alpha: 0.2);
   }
   &-secondary {
     background: $secondary;
@@ -343,7 +340,7 @@ br {
 // }
 
 .navigation {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   gap: 1rem;
   text-align: center;
   display: grid;
@@ -369,4 +366,12 @@ br {
   &-pagination {
     grid-area: P;
   }
+  @media screen and (min-width: 1200px) {
+    margin-top: 2rem;
+  }
+}
+
+
+.bg-light {
+  background: rgba($color: #27a9e0, $alpha: 0.05);
 }

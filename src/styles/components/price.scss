@@ -10,10 +10,15 @@
     }
     &-table {
         &__title {
-            border-top: 4px solid $secondary;
-            border-bottom: 4px solid $secondary;
+
             padding: 0.75rem;
-            background: $bg-lightgreen;
+
+            // border: 1px solid transparent;
+            border-top: 1px solid transparent;
+            border-bottom: 1px solid transparent;
+            background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)) padding-box, $bg-blue border-box;
+            background-clip: padding-box, border-box;
+            // background: $bg-lightgreen;
             color: $dark;
             margin: 0;
         }
@@ -31,10 +36,10 @@
         transition: all 400ms;
         flex-grow: 1;
         // border-bottom: 1px solid $dark;
-        &:hover {
-            background: $bg-lightgreen;
-            color: $dark;
-        }
+        // &:hover {
+        //     background: $bg-lightgreen;
+        //     color: $dark;
+        // }
         
         &__name {
             margin-bottom: 0.5rem;

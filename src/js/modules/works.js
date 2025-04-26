@@ -1,58 +1,85 @@
 export default function () {
-    const columns = gsap.utils.toArray(".works__col");
-window.addEventListener("load", () => {
-  const loops = columns.map((column, i) => {
-    const items = gsap.utils.toArray(".work", column);
-    return verticalLoop(items, {
-      repeat: -1,
-      paddingBottom: 10,
-      paused: false
-    });
-  });
-  gsap.set(loops, {
-    time: (i) => (i % 2) + 1,
-    timeScale: 0
-  });
-  gsap.set(columns, { autoAlpha: 1 });
-  Observer.create({
-    target: window,
-    type: "wheel, touch",
-    onUp: () => {
-      gsap
-        .timeline()
-        .to(loops, {
-          timeScale: (i) => (i % 2 > 0 ? 2 : 2.5),
-          overwrite: true,
-          duration: 0.2
-        })
-        .to(
-          loops,
-          {
-            timeScale: 0,
-            ease: "power1.in"
-          },
-          1
-        );
+  let worksSwiper = new Swiper(".works-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    // freeMode: true,
+    navigation: {
+        nextEl: ".works-button-next",
+        prevEl: ".works-button-prev",
     },
-    onDown: () => {
-      gsap
-        .timeline()
-        .to(loops, {
-          timeScale: (i) => (i % 2 > 0 ? -2 : -2.5),
-          overwrite: true,
-          duration: 0.2
-        })
-        .to(
-          loops,
-          {
-            timeScale: 0,
-            ease: "power1.in"
-          },
-          1
-        );
+    // pagination: {
+    //     el: ".works-pagination",
+    //     clickable: true
+    // },
+    breakpoints: {
+        576: {
+            slidesPerView: 2,
+        },
+        768: {
+            slidesPerView: 3,
+        },
+        992: {
+            slidesPerView: 4,
+        },
+        // 1200: {
+        //     slidesPerView: 5,
+        // },
     }
-  });
-});
+})
+//     const columns = gsap.utils.toArray(".works__col");
+// window.addEventListener("load", () => {
+//   const loops = columns.map((column, i) => {
+//     const items = gsap.utils.toArray(".work", column);
+//     return verticalLoop(items, {
+//       repeat: -1,
+//       paddingBottom: 10,
+//       paused: false
+//     });
+//   });
+//   gsap.set(loops, {
+//     time: (i) => (i % 2) + 1,
+//     timeScale: 0
+//   });
+//   gsap.set(columns, { autoAlpha: 1 });
+//   Observer.create({
+//     target: window,
+//     type: "wheel, touch",
+//     onUp: () => {
+//       gsap
+//         .timeline()
+//         .to(loops, {
+//           timeScale: (i) => (i % 2 > 0 ? 2 : 2.5),
+//           overwrite: true,
+//           duration: 0.2
+//         })
+//         .to(
+//           loops,
+//           {
+//             timeScale: 0,
+//             ease: "power1.in"
+//           },
+//           1
+//         );
+//     },
+//     onDown: () => {
+//       gsap
+//         .timeline()
+//         .to(loops, {
+//           timeScale: (i) => (i % 2 > 0 ? -2 : -2.5),
+//           overwrite: true,
+//           duration: 0.2
+//         })
+//         .to(
+//           loops,
+//           {
+//             timeScale: 0,
+//             ease: "power1.in"
+//           },
+//           1
+//         );
+//     }
+//   });
+// });
 
 /*
       This helper function makes a group of elements animate along the y-axis in a seamless, responsive loop.

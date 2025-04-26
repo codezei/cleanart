@@ -1,14 +1,15 @@
-section#price.price.block
+section#price.price.block.bg-light
     svg(style="display: none;")
         symbol#icon-cash(viewBox="0 0 16 16" fill="currentColor")
             path(d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5z")
     .container
         h2.price__title.text-uppercase.text-center  
-            span.text-aqua Ceny
+            span.text-green Ceny
         .price-table
             .row.price-table__row 
                 .col-12 
-                    h3.h6.price-table__title Czyszczenie mebli tapicerowanych
+                    h3.h6.price-table__title
+                        span.text-blue Czyszczenie mebli tapicerowanych
                 .col-6.col-md-4.col-xxl-3.price-table__col
                     .price-item 
                         h6 Narożnik typu litery L/U
@@ -76,8 +77,8 @@ section#price.price.block
                                 use(xlink:href="#icon-cash")  
                             | od 20 zł (meble skórzane)
                 .col-12 
-                    h3.h6.price-table__title Pranie i czyszczenie wnętrza samochodu 
-                        small.text-light (Dla większych pojazdów ceny są wyższe)
+                    h3.h6.price-table__title 
+                        span.text-blue Pranie i czyszczenie wnętrza samochodu  
                 .col-6.col-md-4.col-xxl-3.price-table__col
                     .price-item 
                         h6 Pełne pranie siedzeń ( fotele + tylna kanapa) 
@@ -103,7 +104,7 @@ section#price.price.block
                             small Dla większych pojazdów ceny są wyższe 
                 .col-6.col-md-4.col-xxl-3.price-table__col
                     .price-item 
-                        h6 Pełne pranie oraz czyszczenie
+                        h6 Kabina bus - pełne pranie oraz czyszczenie
                         p
                             svg.icon(width="16" height="16")
                                 use(xlink:href="#icon-cash")  
@@ -130,7 +131,10 @@ section#price.price.block
                                 use(xlink:href="#icon-cash")  
                             |  od 500zł
                 .col-12 
-                    h3.h6.price-table__title Dywany / Wykładziny 
+                    p Czyszczenie i konserwacja skórzanej tapicerki oraz elementów skórzanych w aucie: +35% do ceny podstawowej.
+                .col-12 
+                    h3.h6.price-table__title 
+                        span.text-blue Dywany / Wykładziny 
                 .col-6.col-md-4.col-xxl-3.price-table__col
                     .price-item 
                         h6 Dywan 
@@ -167,7 +171,7 @@ section#price.price.block
                                 use(xlink:href="#icon-cash")  
                             |  od 11 m²
             p.text-center Ceny mogą się różnić w zależności od stopnia zabrudzenia. Minimalna kwota zamówienia z dojazdem do klienta: od 170 zł
-            p.text-center Czyszczenie i konserwacja skórzanej tapicerki oraz elementów skórzanych w aucie: +35% do ceny podstawowej.
+            p.text-center Przy większej powierzchni od (100m2) oferujemy atrakcyjne rabaty
         .price__btn
             a.btn.btn-primary(href="#cta") Zarejestrować się
             a.btn.btn-primary(href="tel:+48721587252") 
