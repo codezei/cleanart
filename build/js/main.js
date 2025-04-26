@@ -5,16 +5,17 @@
 	  var promoTimeline = gsap.timeline();
 	  var promoTitle = document.querySelector('.promo__title');
 	  var promoSubtitle = document.querySelector('.promo__subtitle');
-	  var promoBtn = document.querySelector('.promo__btn');
-	  var promoBg = document.querySelector('.promo__bg');
+	  var promoBtn = document.querySelector('.promo__btn'); // const promoBg = document.querySelector('.promo__bg')
+
 	  var promoAdvantages = document.querySelector('.promo__advantages');
-	  promoTimeline.from(promoAdvantages, {
-	    x: "100%",
-	    opacity: 0,
-	    duration: 0.2,
-	    ease: "power2.out",
-	    stagger: 0.2
-	  }).from(promoTitle, {
+	  promoTimeline // .from(promoAdvantages, {
+	  // 	x: "100%", 
+	  // 	opacity: 0, 
+	  // 	duration: 0.2, 
+	  // 	ease: "power2.out", 
+	  // 	stagger: 0.2
+	  // })
+	  .from(promoTitle, {
 	    x: "-100%",
 	    opacity: 0,
 	    duration: 1,
@@ -28,10 +29,8 @@
 	    opacity: 0,
 	    duration: 0.1,
 	    ease: "power2.in"
-	  }).from(promoBg, {
-	    opacity: 0,
-	    duration: 1
-	  }); // .from(promoCta, { opacity: 0, duration: 1 })
+	  }); // .from(promoBg, { opacity: 0, duration: 1 })
+	  // .from(promoCta, { opacity: 0, duration: 1 })
 	}
 
 	function about () {
@@ -107,6 +106,27 @@
 	      }
 	    });
 	  }
+
+	  var faq = document.querySelector('.faq');
+	  var faqTitle = document.querySelector('.faq__title');
+	  var faqTimeline = gsap.timeline({
+	    scrollTrigger: {
+	      trigger: faq,
+	      start: "top 70%"
+	    }
+	  });
+	  faqTimeline.from(faqTitle, {
+	    opacity: 0,
+	    y: "-100%",
+	    duration: 0.6,
+	    ease: "power2.out"
+	  }).from(items, {
+	    opacity: 0,
+	    y: "-50%",
+	    duration: 0.6,
+	    stagger: 0.2,
+	    ease: "power2.out"
+	  }, "-=0.3");
 	}
 
 	function works () {
@@ -137,6 +157,75 @@
 
 	    }
 	  }); //     const columns = gsap.utils.toArray(".works__col");
+	  // window.addEventListener("load", () => {
+	  //   const loops = columns.map((column, i) => {
+	  //     const items = gsap.utils.toArray(".work", column);
+	  //     return verticalLoop(items, {
+	  //       repeat: -1,
+	  //       paddingBottom: 10,
+	  //       paused: false
+	  //     });
+	  //   });
+	  //   gsap.set(loops, {
+	  //     time: (i) => (i % 2) + 1,
+	  //     timeScale: 0
+	  //   });
+	  //   gsap.set(columns, { autoAlpha: 1 });
+	  //   Observer.create({
+	  //     target: window,
+	  //     type: "wheel, touch",
+	  //     onUp: () => {
+	  //       gsap
+	  //         .timeline()
+	  //         .to(loops, {
+	  //           timeScale: (i) => (i % 2 > 0 ? 2 : 2.5),
+	  //           overwrite: true,
+	  //           duration: 0.2
+	  //         })
+	  //         .to(
+	  //           loops,
+	  //           {
+	  //             timeScale: 0,
+	  //             ease: "power1.in"
+	  //           },
+	  //           1
+	  //         );
+	  //     },
+	  //     onDown: () => {
+	  //       gsap
+	  //         .timeline()
+	  //         .to(loops, {
+	  //           timeScale: (i) => (i % 2 > 0 ? -2 : -2.5),
+	  //           overwrite: true,
+	  //           duration: 0.2
+	  //         })
+	  //         .to(
+	  //           loops,
+	  //           {
+	  //             timeScale: 0,
+	  //             ease: "power1.in"
+	  //           },
+	  //           1
+	  //         );
+	  //     }
+	  //   });
+	  // });
+
+	  /*
+	        This helper function makes a group of elements animate along the y-axis in a seamless, responsive loop.
+	      
+	        Features:
+	          - Uses yPercent so that even if the widths change (like if the window gets resized), it should still work in most cases.
+	          - When each item animates up or down enough, it will loop back to the other side
+	          - Optionally pass in a config object with values like draggable: true, center: true, speed (default: 1, which travels at roughly 100 pixels per second), paused (boolean), repeat, reversed, enterAnimation, leaveAnimation, and paddingBottom.
+	          - The returned timeline will have the following methods added to it:
+	          - next() - animates to the next element using a timeline.tweenTo() which it returns. You can pass in a vars object to control duration, easing, etc.
+	          - previous() - animates to the previous element using a timeline.tweenTo() which it returns. You can pass in a vars object to control duration, easing, etc.
+	          - toIndex() - pass in a zero-based index value of the element that it should animate to, and optionally pass in a vars object to control duration, easing, etc. Always goes in the shortest direction
+	          - current() - returns the current index (if an animation is in-progress, it reflects the final index)
+	          - times - an Array of the times on the timeline where each element hits the "starting" spot.
+	          - elements - an Array of the elements that are being controlled by the timeline
+	      */
 	}
 
 	function header() {
@@ -513,6 +602,57 @@
 
 	function process() {
 	  var processSlider = new BeerSlider(document.getElementById("process-slider"));
+	  var process = document.querySelector('.process');
+	  var processTitle = document.querySelector('.process__title');
+	  var processSubtitle = document.querySelector('.process__subtitle');
+	  var processItems = document.querySelectorAll('.stage');
+	  var processTimeline = gsap.timeline({
+	    scrollTrigger: {
+	      trigger: process,
+	      start: "top 70%"
+	    }
+	  });
+	  processTimeline.from(processTitle, {
+	    opacity: 0,
+	    y: "-100%",
+	    duration: 0.6,
+	    ease: "power2.out"
+	  }).from(processSubtitle, {
+	    opacity: 0,
+	    x: "-100%",
+	    duration: 0.6,
+	    ease: "power2.out"
+	  }).from(processItems, {
+	    opacity: 0,
+	    y: "-50%",
+	    duration: 0.6,
+	    stagger: 0.2,
+	    ease: "power2.out"
+	  }, "-=0.3");
+	}
+
+	function why() {
+	  var why = document.querySelector('.why');
+	  var whyTitle = document.querySelector('.why__title');
+	  var whyItems = document.querySelectorAll('.advantages__item');
+	  var whyTimeline = gsap.timeline({
+	    scrollTrigger: {
+	      trigger: why,
+	      start: "top 70%"
+	    }
+	  });
+	  whyTimeline.from(whyTitle, {
+	    opacity: 0,
+	    y: "-100%",
+	    duration: 0.6,
+	    ease: "power2.out"
+	  }).from(whyItems, {
+	    opacity: 0,
+	    y: "-50%",
+	    duration: 0.6,
+	    stagger: 0.2,
+	    ease: "power2.out"
+	  }, "-=0.3");
 	}
 
 	function createCommonjsModule(fn, module) {
@@ -1300,6 +1440,7 @@
 	  cta();
 	  process();
 	  banner();
+	  why();
 	});
 	works();
 

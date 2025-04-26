@@ -14,4 +14,29 @@ export default function () {
             }
         })
     }
+
+
+
+
+    const faq = document.querySelector('.faq')
+    const faqTitle = document.querySelector('.faq__title')
+
+    const faqTimeline = gsap.timeline({
+		scrollTrigger: {
+			trigger: faq,
+			start: "top 70%",
+		}
+	});
+    faqTimeline.from(faqTitle, {
+        opacity: 0,
+        y: "-100%",
+        duration: 0.6,
+        ease: "power2.out"
+    }).from(items, {
+        opacity: 0,
+        y:"-50%",
+        duration: 0.6,
+        stagger: 0.2,
+        ease: "power2.out"
+    }, "-=0.3");
 }

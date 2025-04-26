@@ -2,7 +2,7 @@
     position: relative;
     overflow: hidden;
     padding-top: 90px;
-    background: url(../img/stunning-water-splash-illustration.png);
+    background-image: url(../img/promo-bg-mob.webp);
     background-position: left bottom;
     background-size: 800px;
     background-repeat: no-repeat;
@@ -35,6 +35,10 @@
         background-clip: padding-box, border-box;
         padding: 15px;
         border-radius: 0.25rem;
+    }
+
+    @media screen and (min-width: 576px) {
+        background-image: url(../img/promo-bg.webp);
     }
 }
 

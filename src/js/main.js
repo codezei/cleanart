@@ -9,6 +9,7 @@ import services from './modules/services'
 import reviews from './modules/reviews'
 import cta from './modules/cta'
 import process from './modules/process'
+import why from './modules/why'
 import 'regenerator-runtime/runtime';
 import banner from './modules/banner'
 
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	cta()
 	process()
 	banner()
+	why()
 	
 })
 works()
